@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROMAND</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="{% static 'customers/css/style.css' %}"
+</head>
+<body>
+   
+    <header>
+        <a href="#" class = "logo"><i class ="fas-fa-untensils"></i>ROMAND</a>
+        <nav class="navbar">
+            <a  href="index.html#home">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="index.html#sanpham">Sản phẩm</a>
+            <a href="lienhe.html">Liên hệ</a>
+            <a href="index.html#review">Phản hồi</a>
+            <a href="qa.html">Q&A</a>
+    
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <!-- modal -->
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Tổng Cộng:</strong>
+                                <span class="cart-total-price">0 $</span>
+                            </div>
+                        </div>
+    
+    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            
+            <i id="cart" class="fas fa-shopping-cart"></i>
+            <a href="dangnhap.html" class="fas fa-user-plus"></a>
+        </div>
+            
+        
+    
+    </header>
+
+<form action = "" id="search-form">
+    <input type="search" placeholder="Tìm kiếm ở đây..." name ="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+<section id ="prodetails" class="section-p1">
+    <div class ="single-pro-image">
+        <img src="{% static 'customers/img/romand23.jpg' %}" width="100%" id="MainImg" alt="">
+
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="{% static 'customers/img/romand23.jpg' %}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{% static 'customers/img/romand23.jpg' %}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{% static 'customers/img/romand23.jpg' %}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{% static 'customers/img/romand23.jpg' %}" width="100%" class="small-img" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="single-pro-details">
+        <div class="product-container">
+            <h6>Trang chủ / SON TINT</h6>
+            <h4>JL 23 Nucadamia (Mood Nude) – Son Romand Juicy Lasting Tint<br><span class="price">$279.00</span></h4>           
+            <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+        </div>
+        <h4>Chi tiết sản phẩm</h4>
+        <span>Son Romand Juicy Lasting Tint 23 Nucadamia (Mood Nude) là tông màu đỏ nâu nude đầy mê hoặc trong bộ sưu tập Juicy Lasting Tint của Romand. Đây chính là sắc son dành riêng cho những cô gái yêu phong cách trang điểm tiết chế, nhẹ nhàng nhưng vẫn toát lên vẻ rạng rỡ, cuốn hút. </span>
+    </div>
+</section>
+
+
+    <!-- section SẢN PHẨM menu start-->
+    <!-- trgthuhg -->
+    <section class="sanpham" id="sanpham">
+
+        <h3 class="sub-heading"> Sản phẩm</h3>
+        <h1 class="heading">Glow up cùng Romand</h1>
+
+        <div class="box-container">
+            <!-- SON -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='SRM.html';">
+                    <img class="img-prd" src="{% static 'customers/img/romand23.jpg' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">SON TINT BÓNG</h3>
+                    <p>Son JL 23 Nucadamia (Mood Nude)</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">279.00 $</span>
+                </div>
+            </div>
+            <!-- SON -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Nuochoahong.html';">
+                    <img class="img-prd" src="{% static 'customers/img/romand04.jpg' %}" alt="">
+                   
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">SON TINT BÓNG</h3>
+                    <p>Romand Glasting Water Tint 04 Vintage Ocean</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">279.00 $</span>
+                </div>
+            </div>
+            <!-- BẢNG MẮT -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Duongam.html';">
+                    <img class="img-prd" src="{% static 'customers/img/bangmat1.webp' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">BẢNG MẮT</h3>
+                    <p>Bảng phấn mắt Romand Better Than Palette</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">300.00 $</span>
+                </div>
+            </div>
+            <!-- CHÌ KẺ VIỀN MÔI -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Serum.html';">
+                    <img class="img-prd" src="{% static 'customers/img/chikemoi03.png' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">CHÌ KẺ VIỀN MÔI</h3>
+                    <p>Chì Kẻ Viền Môi Romand 03 Kaya Beige</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">350.00 $</span>
+                </div>
+            </div>
+            <!--  -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='case.html';">
+                    <img class="img-prd" src="{% static 'customers/img/chikemoi04.png' %}" alt="">
+                   
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">CHÌ KẺ VIỀN MÔI</h3>
+                    <p>Chì Kẻ Viền Môi Romand 04 Fig Breeze</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">350.00 $</span>
+                </div>
+            </div>
+            <!--  -->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Sonduongkhongmau.html';">
+                    <img class="img-prd" src="{% static 'customers/img/chikemoi05.png' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">CHÌ KẺ VIỀN MÔI</h3>
+                    <p>Chì kẻ viền môi Romand 05 Taupey Shade</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">350.00 $</span>
+                </div>
+            </div>
+
+            <!--SON-->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Sonvibanhmi.html';">
+                    <img class="img-prd" src="{% static 'customers/img/zero03.png' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">SON ZERO VELVET TINT</h3>
+                    <p>DW 03 If Rose – Son Romand Dewyful Water Tint</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">289.00 $</span>
+                </div>
+            </div>
+            <!-- sp2 liptint-->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Sonvithach.html';">
+                    <img class="img-prd" src="{% static 'customers/img/zero12.png' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">SON ZERO VELVET TINT</h3>
+                    <p>DW 12 Canyon – Son Romand Dewyful Water Tint</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">289.00 $</span>
+                </div>
+            </div>
+            <!-- sp3 liptint-->
+            <div class="box">
+                <div class="images" onclick="window.location.href='Sonvicaphe.html';">
+                    <img class="img-prd" src="{% static 'customers/img/zero01.jpg' %}" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3 class="content-product-h3">SON DƯỠNG ESPRESSO</h3>
+                    <p>ZV 01 Melting – Son Romand Zero Velvet Tint</p>
+                    <button type="button" class="btn btn-cart">Thêm vào giỏ hàng</button>
+                    <span class="price">279.00 $</span>
+                </div>
+            </div>
+
+            
+            <!-- end -->
+        </div>
+
+    </section>
+    <!-- section SẢN PHẨM end -->
+
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Địa điểm</h3>
+            <a href="#">Việt Nam</a>
+            <a href="#">Nhật Bản</a>
+            <a href="#">Trung Quốc</a>
+            <a href="#">Mỹ</a>
+            <a href="#">Hàn Quốc</a>
+        </div>
+
+        <div class="box">
+            <h3>Các mục</h3>
+            <a  href="index.html#home">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="index.html#sanpham">Sản phẩm</a>
+            <a href="combo.html">Combo</a>
+            <a href="lienhe.html">Liên hệ</a>
+            <a href="index.html#review">Phản hồi</a>
+            <a href="qa.html">Q&A</a>
+        </div>
+        
+        <div class="box">
+            <h3>Thông tin liên lạc</h3>
+            <a href="#">+124-456-7890</a>
+            <a href="#">+111-222-3333</a>
+            <a href="#">romand@gmail.com</a>
+        </div>
+
+        <div class="box">
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a >
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> copyright @ 2021 by <span>nhóm 4 thiếu nữ </span></div>
+
+</section>
+<script>
+    var  MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+
+    smallimg[0].onclick = function(){
+        MainImg.src= smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src= smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src= smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src= smallimg[3].src;
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- custom js file link -->
+<script src="{% static 'customers/js/script.js' %}"></script>
+</body>
+
+
+</html>

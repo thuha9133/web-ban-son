@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rhode.vn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rhode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="{% static 'customers/css/login.css' %}">
+</head>
+<body>
+<!-- login Tam -->
+    <h2>ĐĂNG NHẬP HOẶC ĐĂNG KÍ</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="register-form">
+                <h1>Tạo tài khoản</h1>
+
+                <input type="text" id="register-name" placeholder="Name" required/>
+                <input type="email" id="register-email" placeholder="Email" required/>
+                <input type="password" id="register-password" placeholder="Password" required/>
+                <button type="button" id="register-button">Đăng kí</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form method="POST" id="login-form">
+                <h1>Đăng nhập</h1>
+
+
+                <input type="email" id="login-email" placeholder="Email" required/>
+                <input type="password" id="login-password" placeholder="Password" required/>
+                <a href="#">Quên mật khẩu</a>
+                <button type="button" id="login-button">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Xin chào!</h1>
+                    <p>Để kết nối với rhode, hãy đăng nhập</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Xin chào!</h1>
+                    <p>Thêm thông tin cá nhân và bắt đầu trải nghiệm với rhode</p>
+                    <button class="ghost" id="signUp">Đăng kí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+<!--  js file -->
+<script>
+    // Register new user
+    document.getElementById('register-button').addEventListener('click', () => {
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        
+        if (name && email && password) {
+            const user = {
+                name: name,
+                email: email,
+                password: password
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('Đăng kí thành công!');
+            document.getElementById('container').classList.remove('right-panel-active');
+        } else {
+            alert('Vui lòng điền đầy đủ thông tin.');
+        }
+    });
+
+    // Login user
+    document.getElementById('login-button').addEventListener('click', () => {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        if (!password) {
+            alert('Vui lòng nhập thông tin.');
+            return;
+        }
+
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+
+        if (storedUser && storedUser.email === email && storedUser.password === password) {
+            window.location.href = "{% url 'index' %}";
+} else {
+    alert('Email hoặc mật khẩu không đúng.');
+}
+    });
+
+    // Handle switching between sign in and sign up panels
+    document.getElementById('signIn').addEventListener('click', () => {
+        document.getElementById('container').classList.remove('right-panel-active');
+    });
+
+    document.getElementById('signUp').addEventListener('click', () => {
+        document.getElementById('container').classList.add('right-panel-active');
+    });
+</script>
+</html>

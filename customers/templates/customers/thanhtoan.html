@@ -1,0 +1,18 @@
+<h2>Thanh toán</h2>
+<table>
+    <tr>
+        <th>Sản phẩm</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+    </tr>
+    {% for item in products %}
+    <tr>
+        <td>{{ item.product.ten_san_pham }}</td>
+        <td>{{ item.product.gia|floatformat:0 }}₫</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.subtotal|floatformat:0 }}₫</td>
+    </tr>
+    {% endfor %}
+</table>
+<h3>Tổng tiền: {{ total|floatformat:0 }}₫</h3>

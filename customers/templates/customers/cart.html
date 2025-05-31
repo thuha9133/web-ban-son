@@ -1,0 +1,21 @@
+<h1>Giỏ hàng</h1>
+<table>
+  <tr>
+    <th>Sản phẩm</th>
+    <th>Giá</th>
+    <th>Số lượng</th>
+    <th>Thành tiền</th>
+  </tr>
+  {% for item in products %}
+    <tr>
+      <td>{{ item.product.ten_san_pham }}</td>
+      <td>{{ item.product.gia }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.subtotal }}</td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="4">Giỏ hàng trống</td></tr>
+  {% endfor %}
+</table>
+<p>Tổng tiền: {{ total }} VNĐ</p>
+<a href="{% url 'thanhtoan' %}">Thanh toán</a>
